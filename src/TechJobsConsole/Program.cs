@@ -24,6 +24,9 @@ namespace TechJobsConsole
 
             Console.WriteLine("Welcome to LaunchCode's TechJobs App!");
 
+
+
+
             // Allow user to search/list until they manually quit with ctrl+c
             while (true)
             {
@@ -56,7 +59,8 @@ namespace TechJobsConsole
 
                     // What is their search term?
                     Console.WriteLine("\nSearch term: ");
-                    string searchTerm = Console.ReadLine();
+                    string searchTerm = Console.ReadLine().ToLower();
+                    
 
                     List<Dictionary<string, string>> searchResults;
 

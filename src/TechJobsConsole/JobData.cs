@@ -51,7 +51,10 @@ namespace TechJobsConsole
                     var name = job.Key;
                     var description = job.Value;
 
-                    if (description.Contains(value))
+                    var nameLower = name.ToLower();
+                    var descriptionLower = description.ToLower();
+
+                    if (descriptionLower.Contains(value))
                     {
                         if (!jobs.Contains(row))
                         {
@@ -69,13 +72,18 @@ namespace TechJobsConsole
             // load data, if not already loaded
             LoadData();
 
+            string lowerColumn = column.ToLower();
+            string lowerValue = value.ToLower();
+
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                string aValueLower = aValue.ToLower();
+
+                if (aValueLower.Contains(lowerValue))
                 {
                     jobs.Add(row);
                 }
